@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  /* Modern Brutalist v2.0 palette */
+  --color-background: #F9FAFB;
+  --color-foreground: #2D3142;
+  --color-primary: #E07A5F;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #81B29A;
+  --color-secondary-foreground: #FFFFFF;
+  --color-accent-lime: #A3FF00;
+  --color-accent-orange: #FF9F1C;
+  --color-accent-purple: #9D4EDD;
+  --color-accent-yellow: #FFD166;
+  --color-muted: #F3F4F6;
+  --color-muted-foreground: #6B7280;
+  --color-border: #2D3142;
+  --color-border-light: #E5E7EB;
+  --color-destructive: #EF4444;
+  --color-success: #10B981;
+  --color-card: #FFFFFF;
+
+  /* Hard shadows — structured depth */
+  --shadow-pop: 3px 3px 0px 0px rgba(0,0,0,0.1);
+  --shadow-brutal: 3px 3px 0px 0px rgba(0,0,0,0.15);
+  --shadow-brutal-lg: 5px 5px 0px 0px rgba(0,0,0,0.15);
+  --shadow-brutal-hover: 4px 4px 0px 0px rgba(0,0,0,0.20);
+
+  /* Typography */
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  color: var(--color-foreground);
+  background-color: var(--color-background);
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}
+
