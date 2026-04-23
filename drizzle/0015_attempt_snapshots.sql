@@ -1,0 +1,2 @@
+ALTER TABLE `attempts` ADD COLUMN `item_snapshot` text;
+ALTER TABLE `attempts` ADD COLUMN `skill_snapshots` text;
