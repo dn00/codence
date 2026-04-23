@@ -1,0 +1,22 @@
+.serena/
+node_modules/
+dist/
+build/
+.DS_Store
+coverage/
+*.tsbuildinfo
+.playwright-mcp/
+.pnpm-store/
+.codence/
+*.db
+*.db-shm
+*.db-wal
+
+# Local dev process artifacts (not part of OSS repo)
+_process/
+.claude/
+CLAUDE.md
+tools/
+
+# npm pack output
+codence-*.tgz
