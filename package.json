@@ -1,0 +1,89 @@
+{
+  "name": "codence",
+  "version": "0.1.0",
+  "description": "Local-first DSA practice runtime — SM-5 spaced review, policy-driven tracks, code execution, and AI coaching. Your data stays on your machine.",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@10.18.0",
+  "bin": {
+    "codence": "dist/server/cli.js"
+  },
+  "files": [
+    "dist/",
+    "drizzle/",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "spaced-repetition",
+    "sm-5",
+    "leetcode",
+    "dsa",
+    "learning",
+    "local-first",
+    "sqlite",
+    "coaching"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dn00/codence.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dn00/codence/issues"
+  },
+  "homepage": "https://github.com/dn00/codence#readme",
+  "scripts": {
+    "dev": "concurrently -k -n client,server \"pnpm dev:client\" \"pnpm dev:server\"",
+    "dev:client": "vite",
+    "dev:server": "tsx watch src/server/index.ts",
+    "build": "pnpm build:client && pnpm build:server",
+    "build:client": "vite build",
+    "build:server": "tsc -p tsconfig.server.json",
+    "start": "node dist/server/index.js",
+    "prepublishOnly": "pnpm build",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.server.json --noEmit",
+    "test": "vitest run",
+    "track:v4:bench": "pnpm tsx scripts/track-v4-bench.ts",
+    "track:v4:simulated-users": "pnpm tsx scripts/track-v4-simulated-users.ts",
+    "track:v4:stress-users": "pnpm tsx scripts/track-v4-stress-users.ts",
+    "track:policy:compiler-bench": "pnpm tsx scripts/track-policy-compiler-bench.ts",
+    "track:policy:compiler-live-bench": "pnpm tsx scripts/track-policy-compiler-live-bench.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.86.1",
+    "@fastify/static": "^8.3.0",
+    "@monaco-editor/react": "^4.7.0",
+    "better-sqlite3": "^12.8.0",
+    "drizzle-orm": "^0.45.2",
+    "fastify": "^5.6.1",
+    "monaco-editor": "^0.55.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.14.0",
+    "react-syntax-highlighter": "^16.1.1",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.2",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.6.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "@vitejs/plugin-react": "^5.0.4",
+    "concurrently": "^9.2.1",
+    "drizzle-kit": "^0.31.10",
+    "jsdom": "^27.0.0",
+    "tailwindcss": "^4.2.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12",
+    "vitest": "^3.2.4"
+  }
+}

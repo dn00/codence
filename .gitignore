@@ -1,0 +1,13 @@
+.serena/
+node_modules/
+dist/
+build/
+.DS_Store
+coverage/
+*.tsbuildinfo
+.playwright-mcp/
+.pnpm-store/
+.codence/
+*.db
+*.db-shm
+*.db-wal
